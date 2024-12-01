@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1: JavaScript Basics</title>
+    <style>
+        nav {
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: blue;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: lightblue;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+        }
+
+        button:hover {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="WEB.html">Page 1</a>
+        <a href="WEB2.html">Page 2</a>
+        <a href="WEB3.HTML">Page 3</a>
+        <a href="page4.html">Page 4</a>
+    </nav>
+
+    <h1>JavaScript Basics: Calculate Rectangle Area</h1>
+    <p>Click the button to calculate the area of a rectangle:</p>
+    <button id="calculateButton">Calculate Area</button>
+
+    <script>
+        function calculateArea() {
+            let width, height;
+            do {
+                width = parseFloat(prompt("Enter a positive width:"));
+            } while (isNaN(width) || width <= 0);
+
+            do {
+                height = parseFloat(prompt("Enter a positive height:"));
+            } while (isNaN(height) || height <= 0);
+
+            const area = width * height;
+            console.log(`The area of the rectangle is ${area}`);
+            alert(`The area of the rectangle is ${area}`);
+        }
+
+        document.getElementById("calculateButton").addEventListener("click", calculateArea);
+    </script>
+</body>
+</html>

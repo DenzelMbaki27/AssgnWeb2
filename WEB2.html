@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2: Event Handling</title>
+    <style>
+        nav {
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: blue;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: lightblue;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+        }
+
+        button:hover {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="WEB.html">Page 1</a>
+        <a href="WEB2.html">Page 2</a>
+        <a href="WEB3.HTML">Page 3</a>
+        <a href="page4.html">Page 4</a>
+    </nav>
+
+    <h1>Event Handling</h1>
+    <p>Click the button to see an alert and change its color:</p>
+    <button id="eventButton">Click Me!</button>
+
+    <script>
+        const eventButton = document.getElementById("eventButton");
+
+        eventButton.addEventListener("click", () => {
+            alert("Button clicked!");
+            eventButton.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        });
+    </script>
+</body>
+</html>

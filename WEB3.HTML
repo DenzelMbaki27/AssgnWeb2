@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 3: DOM Manipulation</title>
+    <style>
+        nav {
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: blue;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: lightgray;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="WEB.html">Page 1</a>
+        <a href="WEB2.html">Page 2</a>
+        <a href="WEB3.HTML">Page 3</a>
+        <a href="WEB4.HTML">Page 4</a>
+    </nav>
+
+    <h1>DOM Manipulation</h1>
+    <ul id="myList">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const ul = document.getElementById("myList");
+            const newItem = document.createElement("li");
+            newItem.textContent = "Fourth item";
+            ul.appendChild(newItem);
+
+            ul.addEventListener("click", (event) => {
+                if (event.target.tagName === "LI") {
+                    event.target.textContent = Math.random().toString(36).substring(2, 8);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
